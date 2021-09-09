@@ -1,0 +1,22 @@
+{
+  "files": {
+    "app.js": "/qrcodeTest/static/js/app.350f8df6.chunk.js",
+    "app.js.map": "/qrcodeTest/static/js/app.350f8df6.chunk.js.map",
+    "runtime~app.js": "/qrcodeTest/static/js/runtime~app.edbb8938.js",
+    "runtime~app.js.map": "/qrcodeTest/static/js/runtime~app.edbb8938.js.map",
+    "static/js/2.4c0c50c3.chunk.js": "/qrcodeTest/static/js/2.4c0c50c3.chunk.js",
+    "static/js/2.4c0c50c3.chunk.js.map": "/qrcodeTest/static/js/2.4c0c50c3.chunk.js.map",
+    "favicon-16.png": "/qrcodeTest/favicon-16.png",
+    "favicon-32.png": "/qrcodeTest/favicon-32.png",
+    "favicon.ico": "/qrcodeTest/favicon.ico",
+    "index.html": "/qrcodeTest/index.html",
+    "manifest.json": "/qrcodeTest/manifest.json",
+    "serve.json": "/qrcodeTest/serve.json",
+    "static/js/2.4c0c50c3.chunk.js.LICENSE.txt": "/qrcodeTest/static/js/2.4c0c50c3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.edbb8938.js",
+    "static/js/2.4c0c50c3.chunk.js",
+    "static/js/app.350f8df6.chunk.js"
+  ]
+}
