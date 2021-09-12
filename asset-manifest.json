@@ -1,21 +1,21 @@
 {
   "files": {
-    "app.js": "/qrcodeTest/static/js/app.350f8df6.chunk.js",
-    "app.js.map": "/qrcodeTest/static/js/app.350f8df6.chunk.js.map",
-    "runtime~app.js": "/qrcodeTest/static/js/runtime~app.edbb8938.js",
-    "runtime~app.js.map": "/qrcodeTest/static/js/runtime~app.edbb8938.js.map",
-    "static/js/2.4c0c50c3.chunk.js": "/qrcodeTest/static/js/2.4c0c50c3.chunk.js",
-    "static/js/2.4c0c50c3.chunk.js.map": "/qrcodeTest/static/js/2.4c0c50c3.chunk.js.map",
-    "favicon-16.png": "/qrcodeTest/favicon-16.png",
-    "favicon-32.png": "/qrcodeTest/favicon-32.png",
-    "favicon.ico": "/qrcodeTest/favicon.ico",
-    "index.html": "/qrcodeTest/index.html",
-    "manifest.json": "/qrcodeTest/manifest.json",
-    "serve.json": "/qrcodeTest/serve.json",
-    "static/js/2.4c0c50c3.chunk.js.LICENSE.txt": "/qrcodeTest/static/js/2.4c0c50c3.chunk.js.LICENSE.txt"
+    "app.js": "/react-native-test/static/js/app.350f8df6.chunk.js",
+    "app.js.map": "/react-native-test/static/js/app.350f8df6.chunk.js.map",
+    "runtime~app.js": "/react-native-test/static/js/runtime~app.5df9f36c.js",
+    "runtime~app.js.map": "/react-native-test/static/js/runtime~app.5df9f36c.js.map",
+    "static/js/2.4c0c50c3.chunk.js": "/react-native-test/static/js/2.4c0c50c3.chunk.js",
+    "static/js/2.4c0c50c3.chunk.js.map": "/react-native-test/static/js/2.4c0c50c3.chunk.js.map",
+    "favicon-16.png": "/react-native-test/favicon-16.png",
+    "favicon-32.png": "/react-native-test/favicon-32.png",
+    "favicon.ico": "/react-native-test/favicon.ico",
+    "index.html": "/react-native-test/index.html",
+    "manifest.json": "/react-native-test/manifest.json",
+    "serve.json": "/react-native-test/serve.json",
+    "static/js/2.4c0c50c3.chunk.js.LICENSE.txt": "/react-native-test/static/js/2.4c0c50c3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime~app.edbb8938.js",
+    "static/js/runtime~app.5df9f36c.js",
     "static/js/2.4c0c50c3.chunk.js",
     "static/js/app.350f8df6.chunk.js"
   ]
