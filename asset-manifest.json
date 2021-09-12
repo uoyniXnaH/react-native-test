@@ -1,23 +1,22 @@
 {
   "files": {
-    "app.js": "/react-native-test/static/js/app.48a026fc.chunk.js",
-    "app.js.map": "/react-native-test/static/js/app.48a026fc.chunk.js.map",
+    "app.js": "/react-native-test/static/js/app.10c49004.chunk.js",
+    "app.js.map": "/react-native-test/static/js/app.10c49004.chunk.js.map",
     "runtime~app.js": "/react-native-test/static/js/runtime~app.5df9f36c.js",
     "runtime~app.js.map": "/react-native-test/static/js/runtime~app.5df9f36c.js.map",
-    "static/js/2.4db6c7c5.chunk.js": "/react-native-test/static/js/2.4db6c7c5.chunk.js",
-    "static/js/2.4db6c7c5.chunk.js.map": "/react-native-test/static/js/2.4db6c7c5.chunk.js.map",
+    "static/js/2.2b28d214.chunk.js": "/react-native-test/static/js/2.2b28d214.chunk.js",
+    "static/js/2.2b28d214.chunk.js.map": "/react-native-test/static/js/2.2b28d214.chunk.js.map",
     "favicon-16.png": "/react-native-test/favicon-16.png",
     "favicon-32.png": "/react-native-test/favicon-32.png",
     "favicon.ico": "/react-native-test/favicon.ico",
     "index.html": "/react-native-test/index.html",
     "manifest.json": "/react-native-test/manifest.json",
     "serve.json": "/react-native-test/serve.json",
-    "static/js/2.4db6c7c5.chunk.js.LICENSE.txt": "/react-native-test/static/js/2.4db6c7c5.chunk.js.LICENSE.txt",
-    "static/media/index.cjs": "/react-native-test/static/media/index.36ceb676.cjs"
+    "static/js/2.2b28d214.chunk.js.LICENSE.txt": "/react-native-test/static/js/2.2b28d214.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime~app.5df9f36c.js",
-    "static/js/2.4db6c7c5.chunk.js",
-    "static/js/app.48a026fc.chunk.js"
+    "static/js/2.2b28d214.chunk.js",
+    "static/js/app.10c49004.chunk.js"
   ]
 }
