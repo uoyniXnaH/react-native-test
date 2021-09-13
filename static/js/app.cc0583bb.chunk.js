@@ -1,2 +1,0 @@
-(this.webpackJsonp=this.webpackJsonp||[]).push([[0],{28:function(e,n,r){"use strict";r.d(n,"a",(function(){return u}));var t=r(0),a=r(45),c=r(11);function o(){return t.createElement("QrReader",{delay:300,onError:function(e){var n=e.err;alert("Error: "+n)},onScan:function(e){alert("Got: "+e)}})}function u(){return t.createElement(c.a,{style:i.container},t.createElement(a.a,null,"s1"),t.createElement(o,null))}var i=r(3).a.create({container:{flex:1},camera:{width:"100%"}})},52:function(e,n,r){e.exports=r(65)}},[[52,1,2]]]);
-//# sourceMappingURL=app.cc0583bb.chunk.js.map
