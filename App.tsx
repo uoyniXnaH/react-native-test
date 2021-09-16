@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { Camera } from 'expo-camera';
+import { BarCodeScanner } from 'expo-barcode-scanner';
 
 export default function App() {
   const [hasPermission, setHasPermission] = useState(false);
@@ -31,9 +32,12 @@ export default function App() {
       <Camera
         style={styles.camera}
         type={type}
+        barCodeScannerSettings={{
+          barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
+        }}
         onBarCodeScanned={scanned ? undefined : handleScanned}
       >
-        <Text>0.0.6</Text>
+        <Text>0.0.8</Text>
       </Camera>
       {scanned && <Button title={'Try again'} onPress={()=>{setScanned(false)}} />}
       {!scanned && <Button title={'waiting...'} onPress={()=>alert("waiting...")} />}
