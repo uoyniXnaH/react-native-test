@@ -3,9 +3,11 @@ import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import * as Permissions from 'expo-permissions';
 
 export default function App() {
-  const [hasPermission, setHasPermission] = useState(false);
+  // const [hasPermission, setHasPermission] = useState(false);
+  const [permission, askForPermission] = Permissions.usePermissions(Permissions.CAMERA, {ask: true});
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [scanned, setScanned] = useState(false);
   const [autoFocus, setAutoFocus] = useState(true);
@@ -15,12 +17,7 @@ export default function App() {
 
   const whiteBalanceEnum = [
     Camera.Constants.WhiteBalance.auto,
-    Camera.Constants.WhiteBalance.cloudy,
-    Camera.Constants.WhiteBalance.continuous,
-    Camera.Constants.WhiteBalance.fluorescent,
-    Camera.Constants.WhiteBalance.incandescent,
-    Camera.Constants.WhiteBalance.shadow,
-    Camera.Constants.WhiteBalance.sunny,
+    Camera.Constants.WhiteBalance.continuous
   ];
 
   const switchZoom = () => {
@@ -32,12 +29,12 @@ export default function App() {
   const switchFocusDepth = () => {
     var z = focusDepth + 0.25;
     if (z > 1) z = 0;
-    setZoom(z);
+    setFocusDepth(z);
   }
 
   const switchWhiteBalance = () => {
     var z = whiteBal + 1;
-    if (z > 6) z = 0;
+    if (z > 1) z = 0;
     setWhiteBal(z);
   }
 
@@ -46,17 +43,11 @@ export default function App() {
     alert(`Get: ${data}`);
   }
 
-  useEffect(() => {
-    (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
-      setHasPermission(status === 'granted');
-    })();
-  }, []);
-
-  if (hasPermission === null) {
+  if (permission === null) {
     return <View />;
   }
-  if (hasPermission === false) {
+  if (permission?.status !== "granted") {
+    askForPermission();
     return <Text>No access to camera</Text>;
   }
   return (
@@ -80,16 +71,17 @@ export default function App() {
       </View>
       <View style={styles.paramContainer}>
           <TouchableOpacity style={styles.button} onPress={() => setAutoFocus(!autoFocus)}>
-            Auto focus: {autoFocus ? "ON" : "OFF"}
+            <Text style={styles.param}>Auto focus: {autoFocus ? "ON" : "OFF"}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={switchFocusDepth}>
-            Focus depth: {focusDepth}
+            <Text style={styles.param}>Focus depth: {focusDepth}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={switchZoom}>
-            Zoom: {zoom}
+            <Text style={styles.param}>Zoom: {zoom}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={switchWhiteBalance}>
-            White balance: {whiteBalanceEnum[whiteBal]}
+            <Text style={styles.param}>White balance:</Text>
+            <Text style={styles.param}>{whiteBalanceEnum[whiteBal]}</Text>
           </TouchableOpacity>
       </View>
     </View>
@@ -113,10 +105,16 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap'
   },
   button: {
-    width: '40%',
-    height: 48,
+    width: '45%',
+    maxWidth: '45%',
+    height: 60,
     marginTop: 12,
+    justifyContent: 'center',
+    textAlign: 'center',
     backgroundColor: '#1572a1',
     borderRadius: 12
+  },
+  param: {
+    color: 'white'
   }
 });
