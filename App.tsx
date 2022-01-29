@@ -108,14 +108,15 @@ const styles = StyleSheet.create({
   },
   paramContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     flexWrap: 'wrap'
   },
   button: {
     width: '40%',
-    height: 36,
+    height: 48,
+    marginTop: 12,
     backgroundColor: '#1572a1',
-    borderRadius: 6
+    borderRadius: 12
   }
 });
