@@ -9,6 +9,10 @@ export default function App() {
   // const [hasPermission, setHasPermission] = useState(false);
   const [permission, askForPermission] = Permissions.usePermissions(Permissions.CAMERA, {ask: true});
   const [type, setType] = useState(Camera.Constants.Type.back);
+  const [isReady, setIsReady] = useState(false);
+  const [camera, setCamera] = useState<Camera | null>(null);
+  const [photoMode, setPhotoMode] = useState(false);
+  const [mode, setMode] = useState("Scan mode");
   const [scanned, setScanned] = useState(false);
   const [autoFocus, setAutoFocus] = useState(true);
   const [zoom, setZoom] = useState(0);
@@ -43,6 +47,21 @@ export default function App() {
     alert(`Get: ${data}`);
   }
 
+  const handleTakingPhoto = async () => {
+    if (camera) {
+      const pic = await camera.takePictureAsync({
+        quality: 1
+      });
+      await BarCodeScanner.scanFromURLAsync(pic.uri, [BarCodeScanner.Constants.BarCodeType.qr])
+      .then((result) => {
+        alert(`Get: ${result[0].data}`);
+      })
+      .catch((error) => {
+        alert(`Failed`);
+      });
+    }
+  }
+
   if (permission === null) {
     return <View />;
   }
@@ -54,20 +73,22 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.camContainer}>
         <Camera
+          ref={(ref) => setCamera(ref)}
           type={type}
           autoFocus={autoFocus}
           zoom={zoom}
           whiteBalance={whiteBalanceEnum[whiteBal]}
           focusDepth={focusDepth}
-          barCodeScannerSettings={{
+          onCameraReady={() => setIsReady(true)}
+          barCodeScannerSettings={photoMode ? undefined : {
             barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
           }}
-          onBarCodeScanned={scanned ? undefined : handleScanned}
+          onBarCodeScanned={(scanned || photoMode) ? undefined : handleScanned}
         >
           <Text>0.0.8</Text>
         </Camera>
-        {scanned && <Button title={'Try again'} onPress={()=>{setScanned(false)}} />}
-        {!scanned && <Button title={'waiting...'} onPress={()=>alert("waiting...")} />}
+        {scanned && <Button title={'Press to try again'} onPress={()=>{setScanned(false)}} />}
+        {!scanned && <Button title={mode} onPress={()=>alert(mode)} />}
       </View>
       <View style={styles.paramContainer}>
           <TouchableOpacity style={styles.button} onPress={() => setAutoFocus(!autoFocus)}>
@@ -83,6 +104,13 @@ export default function App() {
             <Text style={styles.param}>White balance:</Text>
             <Text style={styles.param}>{whiteBalanceEnum[whiteBal]}</Text>
           </TouchableOpacity>
+          {isReady && <TouchableOpacity style={styles.button} onPress={() => setPhotoMode(!photoMode)}>
+            <Text style={styles.param}>Photo mode:</Text>
+            <Text style={styles.param}>{photoMode ? "ON" : "OFF"}</Text>
+          </TouchableOpacity>}
+          {photoMode && <TouchableOpacity style={styles.button} onPress={handleTakingPhoto}>
+            <Text style={styles.param}>Take photo</Text>
+          </TouchableOpacity>}
       </View>
     </View>
   );
