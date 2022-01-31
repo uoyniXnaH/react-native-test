@@ -65,7 +65,7 @@ export default function App() {
         alert(`Get: ${result[0].data}`);
       })
       .catch((error) => {
-        alert(`Failed`);
+        alert(error);
       });
     }
   }
