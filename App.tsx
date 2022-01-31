@@ -8,6 +8,7 @@ import * as Permissions from 'expo-permissions';
 export default function App() {
   // const [hasPermission, setHasPermission] = useState(false);
   const [permission, askForPermission] = Permissions.usePermissions(Permissions.CAMERA, {ask: true});
+  // const [scanPermission, setScanPermission] = useState<boolean | null>(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [isReady, setIsReady] = useState(false);
   const [camera, setCamera] = useState<Camera | null>(null);
@@ -18,6 +19,13 @@ export default function App() {
   const [zoom, setZoom] = useState(0);
   const [whiteBal, setWhiteBal] = useState(0);
   const [focusDepth, setFocusDepth] = useState(0);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const { status } = await BarCodeScanner.requestPermissionsAsync();
+  //     setScanPermission(status === "granted");
+  //   })();
+  // }, []);
 
   const whiteBalanceEnum = [
     Camera.Constants.WhiteBalance.auto,
@@ -85,7 +93,6 @@ export default function App() {
           }}
           onBarCodeScanned={(scanned || photoMode) ? undefined : handleScanned}
         >
-          <Text>0.0.8</Text>
         </Camera>
         {scanned && <Button title={'Press to try again'} onPress={()=>{setScanned(false)}} />}
         {!scanned && <Button title={mode} onPress={()=>alert(mode)} />}
