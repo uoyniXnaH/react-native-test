@@ -1,4 +1,13 @@
 {
+  "background_color": "white",
+  "display": "fullscreen",
+  "icons": [{
+    "src": "/react-native-test/flag.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "name": "test",
+  "start_url": "/",
   "files": {
     "app.js": "/react-native-test/static/js/app.b35994ef.chunk.js",
     "app.js.map": "/react-native-test/static/js/app.b35994ef.chunk.js.map",
