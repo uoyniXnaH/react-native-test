@@ -111,7 +111,7 @@ export default function App() {
             <Text style={styles.param}>White balance:</Text>
             <Text style={styles.param}>{whiteBalanceEnum[whiteBal]}</Text>
           </TouchableOpacity>
-          {isReady && <TouchableOpacity style={styles.button} onPress={() => setPhotoMode(!photoMode)}>
+          {isReady && <TouchableOpacity style={styles.button} onPress={() => {setPhotoMode(!photoMode);setMode("Photo mode")}}>
             <Text style={styles.param}>Photo mode:</Text>
             <Text style={styles.param}>{photoMode ? "ON" : "OFF"}</Text>
           </TouchableOpacity>}
