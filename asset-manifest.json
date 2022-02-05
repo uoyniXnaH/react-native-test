@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/react-native-test/static/js/app.24aa4e40.chunk.js",
-    "app.js.map": "/react-native-test/static/js/app.24aa4e40.chunk.js.map",
+    "app.js": "/react-native-test/static/js/app.65f0b8be.chunk.js",
+    "app.js.map": "/react-native-test/static/js/app.65f0b8be.chunk.js.map",
     "runtime~app.js": "/react-native-test/static/js/runtime~app.5df9f36c.js",
     "runtime~app.js.map": "/react-native-test/static/js/runtime~app.5df9f36c.js.map",
     "static/js/2.c8b1bf40.chunk.js": "/react-native-test/static/js/2.c8b1bf40.chunk.js",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime~app.5df9f36c.js",
     "static/js/2.c8b1bf40.chunk.js",
-    "static/js/app.24aa4e40.chunk.js"
+    "static/js/app.65f0b8be.chunk.js"
   ]
 }
