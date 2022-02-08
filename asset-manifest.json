@@ -1,18 +1,18 @@
 {
   "files": {
-    "app.js": "/react-native-test/static/js/app.f8f30483.chunk.js",
-    "app.js.map": "/react-native-test/static/js/app.f8f30483.chunk.js.map",
+    "app.js": "/react-native-test/static/js/app.e68db67e.chunk.js",
+    "app.js.map": "/react-native-test/static/js/app.e68db67e.chunk.js.map",
     "runtime~app.js": "/react-native-test/static/js/runtime~app.5df9f36c.js",
     "runtime~app.js.map": "/react-native-test/static/js/runtime~app.5df9f36c.js.map",
-    "static/js/2.61b6cd57.chunk.js": "/react-native-test/static/js/2.61b6cd57.chunk.js",
-    "static/js/2.61b6cd57.chunk.js.map": "/react-native-test/static/js/2.61b6cd57.chunk.js.map",
+    "static/js/2.a1853293.chunk.js": "/react-native-test/static/js/2.a1853293.chunk.js",
+    "static/js/2.a1853293.chunk.js.map": "/react-native-test/static/js/2.a1853293.chunk.js.map",
     "index.html": "/react-native-test/index.html",
     "serve.json": "/react-native-test/serve.json",
-    "static/js/2.61b6cd57.chunk.js.LICENSE.txt": "/react-native-test/static/js/2.61b6cd57.chunk.js.LICENSE.txt"
+    "static/js/2.a1853293.chunk.js.LICENSE.txt": "/react-native-test/static/js/2.a1853293.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime~app.5df9f36c.js",
-    "static/js/2.61b6cd57.chunk.js",
-    "static/js/app.f8f30483.chunk.js"
+    "static/js/2.a1853293.chunk.js",
+    "static/js/app.e68db67e.chunk.js"
   ]
 }
