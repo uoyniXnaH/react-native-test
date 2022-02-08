@@ -4,11 +4,12 @@ import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import * as Permissions from 'expo-permissions';
+import dayjs from 'dayjs';
 
 export default function App() {
-  // const [hasPermission, setHasPermission] = useState(false);
-  const [permission, askForPermission] = Permissions.usePermissions(Permissions.CAMERA, {ask: true});
-  // const [scanPermission, setScanPermission] = useState<boolean | null>(null);
+  const [hasPermission, setHasPermission] = useState(false);
+  // const [permission, askForPermission] = Permissions.usePermissions(Permissions.CAMERA, {ask: true});
+  const [scanPermission, setScanPermission] = useState<boolean | null>(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [isReady, setIsReady] = useState(false);
   const [camera, setCamera] = useState<Camera | null>(null);
@@ -20,12 +21,15 @@ export default function App() {
   const [whiteBal, setWhiteBal] = useState(0);
   const [focusDepth, setFocusDepth] = useState(0);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const { status } = await BarCodeScanner.requestPermissionsAsync();
-  //     setScanPermission(status === "granted");
-  //   })();
-  // }, []);
+  const d = new Date("2022-02-05T13:50:00");
+  const now = dayjs(NOW);
+
+  useEffect(() => {
+    (async () => {
+      const { status } = await BarCodeScanner.requestPermissionsAsync();
+      setScanPermission(status === "granted");
+    })();
+  }, []);
 
   const whiteBalanceEnum = [
     Camera.Constants.WhiteBalance.auto,
@@ -70,11 +74,10 @@ export default function App() {
     }
   }
 
-  if (permission === null) {
-    return <View />;
+  if (scanPermission === null) {
+    return <View><Text>Loading...</Text></View>;
   }
-  if (permission?.status !== "granted") {
-    askForPermission();
+  if (scanPermission === false) {
     return <Text>No access to camera</Text>;
   }
   return (
@@ -111,7 +114,12 @@ export default function App() {
             <Text style={styles.param}>White balance:</Text>
             <Text style={styles.param}>{whiteBalanceEnum[whiteBal]}</Text>
           </TouchableOpacity>
-          {isReady && <TouchableOpacity style={styles.button} onPress={() => {setPhotoMode(!photoMode);setMode("Photo mode")}}>
+          <TouchableOpacity style={styles.button} onPress={undefined}>
+            <Text style={styles.param}>{now.diff(d, "minute")}</Text>
+          </TouchableOpacity>
+          {isReady && <TouchableOpacity
+            style={styles.button}
+            onPress={() => {setPhotoMode(!photoMode);setMode(photoMode ? "Photo mode" : "Scan mode")}}>
             <Text style={styles.param}>Photo mode:</Text>
             <Text style={styles.param}>{photoMode ? "ON" : "OFF"}</Text>
           </TouchableOpacity>}

@@ -9,6 +9,7 @@
     "@koale/useworker": "^4.0.2"
   },
   "dependencies": {
+    "dayjs": "^1.10.7",
     "expo": "~42.0.1",
     "expo-barcode-scanner": "^10.2.2",
     "expo-camera": "11.2.2",
